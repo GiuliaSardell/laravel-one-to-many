@@ -48,9 +48,11 @@
       <select 
       name="category_id" id="category_id"
       class="form-select">
-        <option selected>Selezionare la categoria</option>
+        <option>Selezionare la categoria</option>
           @foreach ($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
+            <option 
+            @if($category->id == old('category_id', $post->category_id)) selected @endif 
+            value="{{$category->id}}">{{$category->name}}</option>
           @endforeach
         
         
