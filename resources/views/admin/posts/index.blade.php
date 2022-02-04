@@ -56,6 +56,24 @@
           </tbody>
         </table>
 
+        <div>
+          @foreach ($categories as $category)
+            <h3>{{$category->name}}</h3>
+            <ul>
+              @forelse ($category->posts as $post_category)
+                <li>
+                  <a href="#">{{$post_category->title}}</a>
+                </li>
+                
+              @empty
+                <li>Nessun post presente</li>
+              @endforelse
+            </ul>
+              
+          @endforeach
+        </div>
+        
+
     </div>
 </div>
 @endsection

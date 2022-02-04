@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class PostController extends Controller
         //prendo tutti i post
         $posts = Post::all();
 
-        return view('admin.posts.index', compact('posts'));
+        $categories = Category::all();
+
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -97,6 +100,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     
     public function edit(Post $post)
     {
         return view('admin.posts.edit', compact('post'));
