@@ -44,7 +44,7 @@
 
       <div>
         <label for="text" class="form-label">Categoria</label>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" name="category_id" id="category_id">
           <option selected>Selezionare la categoria</option>
             @foreach ($categories as $category)
             <option 
