@@ -85,8 +85,11 @@ class PostController extends Controller
     {
         $posts = Post::find($id);
 
+        $categories = Category::all();
+
+
         if($posts){
-            return view('admin.posts.index', compact('posts'));
+            return view('admin.posts.show', compact('posts', 'categories'));
         }
         abort(404, 'Errore nella ricerca del post');
 

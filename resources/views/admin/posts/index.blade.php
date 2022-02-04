@@ -34,10 +34,17 @@
                   @endif
                 </td>
                 <td>
+                  <button type="button" class="btn btn-warning">
+                    <a href="{{route('admin.post.show', $post)}}" style="color: white; text-decoration:none;"> Mostra</a>
+                   </button>
+                </td>
+
+                <td>
                   <button type="button" class="btn btn-success">
                     <a href="{{route('admin.post.edit', $post)}}" style="color: white; text-decoration:none;"> Modifica</a>
                    </button>
                 </td>
+                
                 <td>
 
                   <form 
@@ -62,7 +69,7 @@
             <ul>
               @forelse ($category->posts as $post_category)
                 <li>
-                  <a href="#">{{$post_category->title}}</a>
+                  <a href="{{route('admin.post.show', $post_category)}}">{{$post_category->title}}</a>
                 </li>
                 
               @empty
