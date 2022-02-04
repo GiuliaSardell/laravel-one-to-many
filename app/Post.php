@@ -34,4 +34,8 @@ class Post extends Model
         'slug'
     ];
 
+
+    public function Category(){
+        return $this->belongsTo('App\Category');
+    }
 }

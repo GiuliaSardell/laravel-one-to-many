@@ -15,6 +15,7 @@
               <th scope="col">ID</th>
               <th scope="col">TITOLO</th>
               <th scope="col">TESTO</th>
+              <th scope="col">CATEGORIA</th>
               <th scope="col">MODIFICA</th>
               <th scope="col">ELIMINA</th>
             </tr>
@@ -25,6 +26,13 @@
                 <th scope="row">{{$post->id}}</th>
                 <td>{{$post->title}}</td>
                 <td>{{$post->content}}</td>
+                <td> 
+                  @if($post->category)
+                    {{$post->category->name}}
+                  @else 
+                  ---
+                  @endif
+                </td>
                 <td>
                   <button type="button" class="btn btn-success">
                     <a href="{{route('admin.post.edit', $post)}}" style="color: white; text-decoration:none;"> Modifica</a>
