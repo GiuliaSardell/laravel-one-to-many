@@ -43,6 +43,20 @@
       id="content" placeholder="Testo del post">{{old('content', $post->content)}}</textarea>
     </div>
 
+    <div>
+      <label for="text" class="form-label">Categoria</label>
+      <select 
+      name="category_id" id="category_id"
+      class="form-select">
+        <option selected>Selezionare la categoria</option>
+          @foreach ($categories as $category)
+            <option value="{{$category->id}}">{{$category->name}}</option>
+          @endforeach
+        
+        
+      </select>
+    </div>
+
 
     <button type="submit" class="btn btn-primary my-5 mx-2">Invia</button>
     <button type="reset" class="btn btn-danger my-5 mx-2">Reset</button>
